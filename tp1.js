@@ -1,3 +1,5 @@
+//Lehue Juan Manuel 94773/6
+//https://youtu.be/n8vyVWV-0B4
 let cant, eje, alto, ancho, segundos;
 let imagen;
 
@@ -17,7 +19,7 @@ function setup() {
 function draw() {
   background(255);
   //Colocar imagen
-  image(imagen, 0, 0,400,400);
+  image(imagen, 0, 0, 400, 400);
 
   //Funcion principal
   grilla(ancho, alto, eje, cant);
