@@ -1,3 +1,12 @@
+//Juan Lehue -- 94773/6
+//Alex Palomeque -- 93077/3
+//Continuidad de los parques
+/*
+  - FALTA TERMINAR LOS CREDITOS (TEXTO Y IMAGEN)
+  - ACOMODAR LOS TEXTOS EN TODAS LAS PANTALLAS (AGREGAR CUADRADOS
+    PARA EL CONTRASTE DE LOS TEXTOS)
+  - TERMINAR DE DECORAR EN GENERAL
+*/
 let textos = [];
 let imagenes = [];
 let bloque, mitadAn, mitadAl;
@@ -5,7 +14,7 @@ let foto;
 
 function preload() {
   textos = loadStrings('data/textosNarrativos.txt');
-  for (let i=1; i<16; i++) {
+  for (let i=0; i<16; i++) {
     imagenes[i] = loadImage("data/bloque"+i+".jpeg");
   }
   foto = loadImage('data/bloque1.jpeg');
@@ -13,7 +22,7 @@ function preload() {
 
 function setup() {
   createCanvas(640, 480);
-  bloque = 0;
+  bloque = "inicio";
   mitadAn = width/2;
   mitadAl = height/2;
   for (let i=1; i<16; i++) {
@@ -24,57 +33,165 @@ function setup() {
 
 function draw() {
   background(225);
-  if (bloque === 0) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 1) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 2) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 3) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 4) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 5) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 6) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 7) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 8) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 9) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 10) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 11) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 12) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 13) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 14) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } else if (bloque === 15) {
-    cargarImagen(imagenes, bloque, mitadAn, mitadAl, CENTER);
-    cargarTexto(textos, bloque, 50, 50, 500, LEFT);
-  } 
+  if (bloque === "inicio") {
+    cargarImagen(imagenes, 0, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 0, 50, 50, 500, LEFT);
+    boton(220, 400, 100, 30, "Empezar");
+    boton(520, 400, 100, 30, "Creditos");
+  } else if (bloque === "intro") {
+    cargarImagen(imagenes, 1, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 1, 50, 50, 500, LEFT);
+    boton(120, 400, 130, 30, "Seguir leyendo");
+    boton(320, 400, 100, 30, "Levantarse");
+  } else if (bloque === "ignorar") {
+    cargarImagen(imagenes, 2, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 2, 50, 50, 500, LEFT);
+    boton(220, 400, 130, 30, "Seguir leyendo");
+  } else if (bloque === "vertigo") {
+    cargarImagen(imagenes, 3, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 3, 50, 50, 500, LEFT);
+    boton(220, 400, 100, 30, "Continuar");
+  } else if (bloque === "final1") {
+    cargarImagen(imagenes, 4, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 4, 50, 50, 500, LEFT);
+    boton(220, 400, 140, 30, "Volver al inicio");
+  } else if (bloque === "levantarse") {
+    cargarImagen(imagenes, 5, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 5, 50, 50, 500, LEFT);
+    boton(120, 400, 100, 30, "Volver");
+    boton(320, 400, 100, 30, "Investigar");
+  } else if (bloque === "volver") {
+    cargarImagen(imagenes, 6, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 6, 50, 50, 500, LEFT);
+    boton(220, 400, 130, 30, "Seguir leyendo");
+  } else if (bloque === "salir") {
+    cargarImagen(imagenes, 7, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 7, 50, 50, 500, LEFT);
+    boton(220, 400, 100, 30, "Continuar");
+  } else if (bloque === "continuar") {
+    cargarImagen(imagenes, 8, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 8, 50, 50, 500, LEFT);
+    boton(120, 400, 100, 30, "Volver");
+    boton(320, 400, 130, 30, "Abrir la puerta");
+  } else if (bloque === "empujar") {
+    cargarImagen(imagenes, 9, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 9, 50, 50, 500, LEFT);
+    boton(220, 400, 100, 30, "Enfrentarlo");
+  } else if (bloque === "enfrentamiento") {
+    cargarImagen(imagenes, 10, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 10, 50, 50, 500, LEFT);
+    boton(220, 400, 100, 30, "Continuar");
+  } else if (bloque === "final2") {
+    cargarImagen(imagenes, 11, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 11, 50, 50, 500, LEFT);
+    boton(220, 400, 140, 30, "Volver al inicio");
+  } else if (bloque === "miedo") {
+    cargarImagen(imagenes, 12, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 12, 50, 50, 500, LEFT);
+    boton(120, 400, 130, 30, "Seguir leyendo");
+    boton(320, 400, 130, 30, "Cerrar el libro");
+  } else if (bloque === "atrapar") {
+    cargarImagen(imagenes, 13, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 13, 50, 50, 500, LEFT);
+    boton(220, 400, 100, 30, "Continuar");
+  } else if (bloque === "cerrar") {
+    cargarImagen(imagenes, 14, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 14, 50, 50, 500, LEFT);
+    boton(220, 400, 100, 30, "Continuar");
+  } else if (bloque === "final3") {
+    cargarImagen(imagenes, 15, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 15, 50, 50, 500, LEFT);
+    boton(220, 400, 140, 30, "Volver al inicio");
+  } else if (bloque === "creditos") {
+    //cargarImagen(imagenes, 16, mitadAn, mitadAl, CENTER);
+    cargarTexto(textos, 16, 50, 50, 500, LEFT);
+    boton(220, 400, 140, 30, "Volver al inicio");
+  }
 }
 
 function mousePressed() {
-  bloque++;
+  if (bloque === "inicio") {
+    if (detectarMouse(220, 400, 100, 30)) {
+      bloque="intro";
+    }
+    if (detectarMouse(520, 400, 100, 30)) {
+      bloque="creditos";
+    }
+  } else if (bloque === "intro") {
+    if (detectarMouse(120, 400, 130, 30)) {
+      bloque="ignorar";
+    }
+    if (detectarMouse(320, 400, 100, 30)) {
+      bloque="levantarse";
+    }
+  } else if (bloque === "ignorar") {
+    if (detectarMouse(220, 400, 130, 30)) {
+      bloque="vertigo";
+    }
+  } else if (bloque === "vertigo") {
+    if (detectarMouse(220, 400, 100, 30)) {
+      bloque="final1";
+    }
+  } else if (bloque === "final1") {
+    if (detectarMouse(220, 400, 130, 30)) {
+      bloque="inicio";
+    }
+  } else if (bloque === "levantarse") {
+    if (detectarMouse(120, 400, 100, 30)) {
+      bloque="volver";
+    }
+    if (detectarMouse(320, 400, 100, 30, )) {
+      bloque="salir";
+    }
+  } else if (bloque === "volver") {
+    if (detectarMouse(220, 400, 130, 30)) {
+      bloque="vertigo";
+    }
+  } else if (bloque === "salir") {
+    if (detectarMouse(220, 400, 100, 30)) {
+      bloque="continuar";
+    }
+  } else if (bloque === "continuar") {
+    if (detectarMouse(320, 400, 130, 30)) {
+      bloque="empujar";
+    }
+    if (detectarMouse(120, 400, 130, 30)) {
+      bloque="miedo";
+    }
+  } else if (bloque === "empujar") {
+    if (detectarMouse(220, 400, 100, 30)) {
+      bloque="enfrentamiento";
+    }
+  } else if (bloque === "enfrentamiento") {
+    if (detectarMouse(220, 400, 100, 30)) {
+      bloque="final2";
+    }
+  } else if (bloque === "final2") {
+    if (detectarMouse(220, 400, 140, 30)) {
+      bloque="inicio";
+    }
+  } else if (bloque === "miedo") {
+    if (detectarMouse(120, 400, 130, 30)) {
+      bloque="atrapar";
+    }
+    if (detectarMouse(320, 400, 130, 30)) {
+      bloque="cerrar";
+    }
+  } else if (bloque === "atrapar") {
+    if (detectarMouse(220, 400, 100, 30)) {
+      bloque="final1";
+    }
+  } else if (bloque === "cerrar") {
+    if (detectarMouse(220, 400, 100, 30)) {
+      bloque="final3";
+    }
+  } else if (bloque === "final3") {
+    if (detectarMouse(220, 400, 140, 30)) {
+      bloque="inicio";
+    }
+  } else if (bloque === "creditos") {
+    if (detectarMouse(220, 400, 140, 30)) {
+      bloque="inicio";
+    }
+  }
 }
