@@ -1,6 +1,15 @@
-function cargarTexto(texto, index, x, y, an, align) {
+function cargarTexto(texto, index, x, y, anT, an, al, align, tamaño) {
+  push();
+  fill(0, 200);
+  stroke(255);
+  rect(x, y, an, al);
+  pop();
+  push();
+  fill(255);
+  textSize(tamaño);
   textAlign(align);
-  text(texto[index], x, y, an);
+  text(texto[index], x+5, y+5, anT);
+  pop();
 }
 
 function cargarImagen(img, index, x, y, align) {
