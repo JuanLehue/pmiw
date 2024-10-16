@@ -1,13 +1,7 @@
 //Juan Lehue -- 94773/6
 //Alex Palomeque -- 93077/3
 //Continuidad de los parques
-/*
-  - FALTA TERMINAR LOS CREDITOS (TEXTO Y IMAGEN)
- - ACOMODAR LOS TEXTOS EN TODAS LAS PANTALLAS (AGREGAR CUADRADOS
- PARA EL CONTRASTE DE LOS TEXTOS)
- - TERMINAR DE DECORAR EN GENERAL
- - AGREGAR AUDIO
- */
+
 let textos = [];
 let imagenes = [];
 let bloque, mitadAn, mitadAl;
