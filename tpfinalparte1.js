@@ -1,12 +1,14 @@
 //Juan Lehue -- 94773/6
 //Alex Palomeque -- 93077/3
 //Continuidad de los parques
+//https://www.youtube.com/watch?v=17726ni4dpc&ab_channel=JuanLehue
 
 let textos = [];
 let imagenes = [];
 let bloque, mitadAn, mitadAl;
 let ambiente, click;
-let titulo; 
+let titulo;
+
 function preload() {
   textos = loadStrings('data/textosNarrativos.txt');
   titulo= loadFont('data/ftitulo.ttf');
@@ -36,7 +38,7 @@ function draw() {
     cargarImagen(imagenes, 0, mitadAn, mitadAl, CENTER);
     push();
     textFont(titulo);
-    stroke(60,40,20); 
+    stroke(60, 40, 20);
     strokeWeight(5);
     cargarTexto(textos, 0, 100, 80, 380, 0, 0, LEFT, 30);
     pop();
@@ -113,13 +115,13 @@ function draw() {
     push();
     fill(0, 200);
     rect(172, 155, 200, 200);
-      push();
+    push();
     textFont(titulo);
-    stroke(60,40,20); 
+    stroke(60, 40, 20);
     strokeWeight(5);
     cargarTexto(textos, 16, 210, 80, 380, 0, 0, LEFT, 30);
     pop()
-    fill(255);
+      fill(255);
     textSize(20);
     text("Juan Lehue", 200, 200);
     text("Alex Palomeque", 200, 230);
