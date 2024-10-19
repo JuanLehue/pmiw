@@ -6,9 +6,10 @@ let textos = [];
 let imagenes = [];
 let bloque, mitadAn, mitadAl;
 let ambiente, click;
-
+let titulo; 
 function preload() {
   textos = loadStrings('data/textosNarrativos.txt');
+  titulo= loadFont('data/ftitulo.ttf');
   ambiente = loadSound('data/ambiente.mp3');
   click = loadSound('data/click.mp3');
   for (let i=0; i<17; i++) {
@@ -33,7 +34,12 @@ function draw() {
   background(225);
   if (bloque === "inicio") {
     cargarImagen(imagenes, 0, mitadAn, mitadAl, CENTER);
+    push();
+    textFont(titulo);
+    stroke(60,40,20); 
+    strokeWeight(5);
     cargarTexto(textos, 0, 100, 80, 380, 0, 0, LEFT, 30);
+    pop();
     fill(0, 200);
     rect(172, 155, 200, 200);
     boton(220, 200, 100, 30, "Empezar");
@@ -107,7 +113,12 @@ function draw() {
     push();
     fill(0, 200);
     rect(172, 155, 200, 200);
+      push();
+    textFont(titulo);
+    stroke(60,40,20); 
+    strokeWeight(5);
     cargarTexto(textos, 16, 210, 80, 380, 0, 0, LEFT, 30);
+    pop()
     fill(255);
     textSize(20);
     text("Juan Lehue", 200, 200);
