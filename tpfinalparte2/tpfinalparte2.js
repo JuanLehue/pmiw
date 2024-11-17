@@ -1,3 +1,8 @@
+//Juan Lehue -- 94773/6
+//Alex Palomeque -- 93077/3
+//Continuidad de los parques
+//https://youtu.be/1WaDA1J2IUU
+
 let game;
 let cuchillo;
 let personaje = [];
