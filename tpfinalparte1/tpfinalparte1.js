@@ -1,13 +1,8 @@
 //Juan Lehue -- 94773/6
 //Alex Palomeque -- 93077/3
 //Continuidad de los parques
-//https://www.youtube.com/watch?v=17726ni4dpc&ab_channel=JuanLehue
+//https://youtu.be/2BHzUopBWEE
 
-/*
- |¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯|
- | FALTA ACOMODAR LOS MOUSEPRESSED DE LOS BOTONES DEL INICIO Y DE LOS CREDITOS!!!!!!!!!!!|
- |_______________________________________________________________________________________|
- */
 let textos = [];
 let imagenes = [];
 let bloque, mitadAn, mitadAl;
